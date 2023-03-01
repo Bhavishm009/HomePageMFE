@@ -6,8 +6,9 @@ import useMfeStore from 'LoginPageMFE/useMfeStore'
 import Header from '../Header/Header';
 import Hero from '../Hero/Hero';
 import Footer from '../Footer/Footer';
-import Navbar from '../../../Navbar';
-// import Navbar from 'LoginPageMFE/Navbar'
+import Navbar from '../Navbar/Navbar';
+
+
 /**
  * Impliments HomePage component
  * 
@@ -24,8 +25,9 @@ export const HomePage = (props) => {
     return (
 
         <div className={classes.container}>
-            <Navbar />
-            <Header />
+            {/* <Header /> */}
+          
+            <Navbar/>
             <Hero />
             <Category />
             <Footer />

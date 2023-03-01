@@ -26,7 +26,6 @@ const Category = () => {
 
   return (
     <>
-      <Navbar filterItem={filterItem} menuList={menuList} />
       <BuyCard menuData={menuData} />
     </>
   )
