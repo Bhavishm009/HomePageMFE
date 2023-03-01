@@ -59,7 +59,6 @@ module.exports = (env) => ({
         './Hero': './src/components/views/Hero/Hero.jsx',
         './Footer':'./src/components/views/Footer/Footer.jsx',
         './Navbar':'./src/components/views/Navbar/Navbar.jsx',
-        './Header':'./src/components/views/Header/Header.jsx',
         './Homepage':'./src/components/views/HomePage/HomePage.jsx',
         './Category':'./src/Category.js'
       },

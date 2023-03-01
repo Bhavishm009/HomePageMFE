@@ -3,19 +3,11 @@ import React from 'react';
 import Category from '../../../Category';
 import classes from './HomePage.module.css';
 import useMfeStore from 'LoginPageMFE/useMfeStore'
-import Header from '../Header/Header';
 import Hero from '../Hero/Hero';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 
 
-/**
- * Impliments HomePage component
- * 
- * @method
- * @param {object} props - React properties passed from higher-level
- * @returns HomePage
- */
 
 export const HomePage = (props) => {
     const login = useMfeStore(state => state.loginUser)
@@ -25,8 +17,6 @@ export const HomePage = (props) => {
     return (
 
         <div className={classes.container}>
-            {/* <Header /> */}
-          
             <Navbar/>
             <Hero />
             <Category />
