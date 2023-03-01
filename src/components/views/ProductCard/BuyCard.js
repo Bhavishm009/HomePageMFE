@@ -1,44 +1,28 @@
 import React from "react";
 import "./Global.css";
-import { useState } from "react";
-import { useSetRecoilState } from "recoil";
-import { cartValueAtom } from "../../../Recoil";
+import products from 'LoginPageMFE/products'
+import useMfeStore from 'LoginPageMFE/useMfeStore'
 
 
 
 
-
-const BuyCard = ({ menuData }) => {
-
-
-
-
-  const [cartItem, setCartItem] = useState([]);
-  const setValues = useSetRecoilState(cartValueAtom);
- 
-  const cartValue = JSON.parse(localStorage.getItem("Cart"));
-  let Length = cartValue?.length;
-  function handleShop(id) {
-    const Cart = menuData?.filter((item, i) => i == id);
-    setCartItem([...cartItem, ...Cart]);
-    setValues(Length);
-  }
-   localStorage.setItem("Cart", JSON.stringify(cartItem));
+const BuyCard = () => {
+  const addToCart = useMfeStore(state => state.addToCart)
   return (
     <>
       <section className="main-card--cointainer">
-        {menuData?.map((curElem, i) => {
-          const { id, name, category, image, description } = curElem;
+        {products?.map((curElem, i) => {
+          const { id, productName, productImg, description } = curElem;
           return (
             <div className="card-container" key={id}>
               <div className="card">
                 <div className="card-body">
-                  <span className="card-author subtle">{category}</span>
-                  <h2 className="card-title">{name}</h2>
-                  <img src={image} alt="Dosa" className="card-media" />
+                  <span className="card-author subtle">{description}</span>
+                  <h2 className="card-title">{productName}</h2>
+                  <img src={productImg} alt="Dosa" className="card-media" />
                   <button
                     className="card-tag subtle"
-                    onClick={() => handleShop(i)}
+                    onClick={() => addToCart(curElem)}
                   >
                     Order Now
                   </button>

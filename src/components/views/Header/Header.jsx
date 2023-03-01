@@ -8,9 +8,8 @@ import { VscAccount } from "react-icons/vsc";
 import Text from "../Text/Text.jsx";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
-import {FaShopify} from 'react-icons/fa'
-import { useRecoilValue } from "recoil";
-import { cartValueAtom } from "../../../Recoil.js";
+import { FaShopify } from 'react-icons/fa'
+import useMfeStore from 'LoginPageMFE/useMfeStore'
 /**
  * Impliments Header component
  *
@@ -28,19 +27,18 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 export const Header = (props) => {
-
-   const cart = useRecoilValue(cartValueAtom)
+  const cart = useMfeStore(state => state.cart)
   return (
     <div className={classes.container}>
-      <FaShopify style={{fontSize: "30px", color:'#3BB77E',marginRight:'18rem'}}></FaShopify>
+      <FaShopify style={{ fontSize: "30px", color: '#3BB77E', marginRight: '18rem' }}></FaShopify>
       <div className={classes.searchBar_div}>
         <MyInput placeholder="Search for item" className={classes.input} />
         <div className={classes.icons}>
-          <VscAccount style={{ fontSize: "30px", color:'#3BB77E' }} />
-          <Text  variant="text-sm">Account</Text>
-          <BsHeart style={{ fontSize: "30px", color:'#3BB77E' }} />
+          <VscAccount style={{ fontSize: "30px", color: '#3BB77E' }} />
+          <Text variant="text-sm">Account</Text>
+          <BsHeart style={{ fontSize: "30px", color: '#3BB77E' }} />
           <Text variant="text-sm">Like</Text>
-          <BsCart3 style={{ fontSize: "30px", color:'#3BB77E' }}/><StyledBadge badgeContent={cart} color="secondary"></StyledBadge>
+          <BsCart3 style={{ fontSize: "30px", color: '#3BB77E' }} /><StyledBadge badgeContent={cart?.cartItems?.length || 0} color="secondary"></StyledBadge>
           <Text variant="text-sm">Cart</Text>
         </div>
       </div>

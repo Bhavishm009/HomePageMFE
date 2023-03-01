@@ -19,16 +19,16 @@ import Navbar from '../../../Navbar';
 export const HomePage = (props) => {
     const login = useMfeStore(state => state.loginUser)
     login({
-        name :'Kuldeep Dhaka'
+        name: 'Kuldeep Dhaka'
     })
     return (
 
         <div className={classes.container}>
-            <Navbar/>
-            <Header/>
-            <Hero/>
+            <Navbar />
+            <Header />
+            <Hero />
             <Category />
-            <Footer/>
+            <Footer />
         </div>
     )
 }
