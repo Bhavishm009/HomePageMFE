@@ -17,7 +17,7 @@ export const HomePage = (props) => {
     return (
 
         <div className={classes.container}>
-            <Navbar/>
+        
             <Hero />
             <Category />
             <Footer />

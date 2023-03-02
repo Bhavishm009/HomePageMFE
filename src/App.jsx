@@ -6,12 +6,13 @@ import RegisterPage from "LoginPageMFE/RegisterPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginPage from "LoginPageMFE/LoginPage";
 import Aboutus from "./components/views/Aboutus/Aboutus";
-// import RoutingComponant from "LoginPageMFE/RoutingComponant";
+// import  from "LoginPageMFE/RoutingComponant";
 import SingleProductPage from 'ProductPageMFE/SingleProductCard';
+import Navbar from "./components/views/Navbar/Navbar";
 const App = () => (
   <>
     <BrowserRouter>
-   
+     <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
