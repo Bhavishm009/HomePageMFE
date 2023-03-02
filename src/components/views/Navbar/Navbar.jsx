@@ -22,7 +22,7 @@ import { Link } from "react-router-dom";
  * @param {object} props - React properties passed from higher-level
  * @returns Navbar
  */
-const pages = [<Link to='/Aboutus'>AboutUs</Link>, <Link to='/Login'>Login</Link>, 'Contact Us','Login',<Link to='/RegisterPage'>Register</Link>,<Searchbar/> ,];
+const pages = [<Link to='/aboutus' style={{color:'white'}}>AboutUs</Link>, <Link to='/login' style={{color:'white'}}>Login</Link>,<Link to='/signIn' style={{color:'white'}}>Register</Link>,<Searchbar/> ,<Link to='/product'style={{color:'white'}}>Product</Link>];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 export const Navbar = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -60,7 +60,7 @@ export const Navbar = (props) => {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "inherit",
+                color: "white",
                 textDecoration: "none",
               }}
             >
@@ -74,7 +74,7 @@ export const Navbar = (props) => {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="inherit"
+                color="white"
               >
                 <MenuIcon />
               </IconButton>
@@ -118,7 +118,7 @@ export const Navbar = (props) => {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "inherit",
+                color: "white",
                 textDecoration: "none",
               }}
             >
@@ -139,7 +139,7 @@ export const Navbar = (props) => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar alt="Remy Sharp" src="" />
                 </IconButton>
               </Tooltip>
               <Menu

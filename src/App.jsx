@@ -6,18 +6,23 @@ import RegisterPage from "LoginPageMFE/RegisterPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginPage from "LoginPageMFE/LoginPage";
 import Aboutus from "./components/views/Aboutus/Aboutus";
-import RoutingComponant from "LoginPageMFE/RoutingComponant";
+// import RoutingComponant from "LoginPageMFE/RoutingComponant";
+import SingleProductPage from 'ProductPageMFE/SingleProductCard';
 const App = () => (
   <>
     <BrowserRouter>
+   
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/Login" element={<LoginPage />} />
-        <Route path="/RegisterPage" element={<RegisterPage />} />
-        <Route path="/Aboutus" element={<Aboutus />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signIn" element={<RegisterPage />} />
+        <Route path="/aboutus" element={<Aboutus />} />
+        <Route path='/product' element={<SingleProductPage/>}/>
       </Routes>
+
     </BrowserRouter>
     {/* <RoutingComponant path='/' element='<HomePage/>'/> */}
+    {/* <RoutingComponant routes={routes} path={'/'} element={<HomePage />} /> */}
   </>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

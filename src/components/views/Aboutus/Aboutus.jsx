@@ -32,7 +32,7 @@ export const Aboutus = (props) => {
               style={{ width: "100%" }}
             />
             <div className={classes.container}>
-              <h2>Jane Doe</h2>
+              <h2>Emily Shaw</h2>
               <p className={classes.title}>CEO & Founder</p>
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>jane@example.com</p>
@@ -49,7 +49,7 @@ export const Aboutus = (props) => {
               style={{ width: "100%" }}
             />
             <div className={classes.container}>
-              <h2>Mike Ross</h2>
+              <h2>Lily Ross</h2>
               <p className={classes.title}>Head Engineer</p>
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>mike@example.com</p>
@@ -66,7 +66,7 @@ export const Aboutus = (props) => {
               style={{ width: "100%" }}
             />
             <div className={classes.container}>
-              <h2>John Doe</h2>
+              <h2>Jenny Doe</h2>
               <p className={classes.title}>Designer</p>
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>john@example.com</p>
