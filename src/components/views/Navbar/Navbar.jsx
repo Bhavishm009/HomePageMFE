@@ -15,6 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Searchbar from "../Searchbar/Searchbar";
 import { Link } from "react-router-dom"; 
+import {FaShopify} from 'react-icons/fa'
 /**
  * Impliments Navbar component
  *
@@ -23,7 +24,7 @@ import { Link } from "react-router-dom";
  * @returns Navbar
  */
 const pages = [<Link to='/aboutus' style={{color:'white'}}>AboutUs</Link>, <Link to='/login' style={{color:'white'}}>Login</Link>,<Link to='/signIn' style={{color:'white'}}>Register</Link>,<Searchbar/> ,<Link to='/product'style={{color:'white'}}>Product</Link>];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Profile', 'Account', 'Dashboard'];
 export const Navbar = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -48,7 +49,8 @@ export const Navbar = (props) => {
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+                <FaShopify style={{fontSize:'40px',marginLeft:'15px'}}/>
             <Typography
               variant="h6"
               noWrap
