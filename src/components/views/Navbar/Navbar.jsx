@@ -24,10 +24,15 @@ import {FaShopify} from 'react-icons/fa'
  * @returns Navbar
  */
 const pages = [<Link to='/aboutus' style={{color:'white'}}>AboutUs</Link>, <Link to='/login' style={{color:'white'}}>Login</Link>,<Link to='/signIn' style={{color:'white'}}>Register</Link>,<Searchbar/> ,<Link to='/product'style={{color:'white'}}>Product</Link>];
-const settings = ['Profile', 'Account', 'Dashboard'];
+const settings = ['Profile', 'Account', 'Dashboard',];
 export const Navbar = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const userData = JSON.parse(localStorage.getItem('userDetails'))
+  const finalUserName = userData?.slice(-1)
+
+  const userName = finalUserName?.length>0? finalUserName[0].name : 'guest'
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -124,7 +129,7 @@ export const Navbar = (props) => {
                 textDecoration: "none",
               }}
             >
-              LOGO
+             Nest
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
@@ -138,7 +143,7 @@ export const Navbar = (props) => {
               ))}
             </Box>
 
-            <Box sx={{ flexGrow: 0 }}>
+            {/* <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar alt="Remy Sharp" src="" />
@@ -160,14 +165,17 @@ export const Navbar = (props) => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                
+         
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
-            </Box>
+           
+            </Box> */}
+            
+          <span><h6>welcome</h6><h5>{userName}</h5></span>
           </Toolbar>
         </Container>
       </AppBar>
