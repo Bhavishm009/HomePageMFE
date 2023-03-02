@@ -13,11 +13,8 @@
   --font-family: "Montserrat", sans-sarif;
 }
 html{
-  /* position: relative; */
-  /* width: 1920px;
-  height: 5264px; */
+  position: relative; 
+  width: auto;
+  height: auto;
   background: #FFFFFF;
-}
-:Link{
-  color: #FFFFFF;
 }

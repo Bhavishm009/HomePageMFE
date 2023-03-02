@@ -60,7 +60,8 @@ module.exports = (env) => ({
         './Footer':'./src/components/views/Footer/Footer.jsx',
         './Navbar':'./src/components/views/Navbar/Navbar.jsx',
         './Homepage':'./src/components/views/HomePage/HomePage.jsx',
-        './Category':'./src/Category.js'
+        './Category':'./src/Category.js',
+        './Aboutus' :'./src/components/views/Aboutus/Aboutus.jsx'
       },
       shared: {
         ...deps,
