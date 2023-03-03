@@ -1,21 +1,18 @@
-import PropTypes from "prop-types";
-import React from "react";
+import AdbIcon from '@mui/icons-material/Adb';
+import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
+import Container from '@mui/material/Container';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import Searchbar from "../Searchbar/Searchbar";
-import { Link } from "react-router-dom"; 
-import {FaShopify} from 'react-icons/fa'
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import PropTypes from "prop-types";
+import useMfeStore from "LoginPageMFE/useMfeStore";
+import React from "react";
+import { FaShopify } from 'react-icons/fa';
 /**
  * Impliments Navbar component
  *
@@ -23,7 +20,14 @@ import {FaShopify} from 'react-icons/fa'
  * @param {object} props - React properties passed from higher-level
  * @returns Navbar
  */
-const pages = [<Link to='/aboutus' style={{color:'white'}}>AboutUs</Link>, <Link to='/login' style={{color:'white'}}>Login</Link>,<Link to='/signIn' style={{color:'white'}}>Register</Link>,<Searchbar/> ,<Link to='/product'style={{color:'white'}}>Product</Link>];
+const pages = [
+  <a href='/aboutus' style={{ color: 'white' }}>AboutUs</a>,
+  <a href='/login' style={{ color: 'white' }}>Login</a>,
+  <a href='/signIn' style={{ color: 'white' }}>Register</a>,
+  <a href='/product' style={{ color: 'white' }}>Product</a>];
+
+const pageData = [{ href: '/aboutus', name: 'AboutUs' }]
+
 const settings = ['Profile', 'Account', 'Dashboard',];
 export const Navbar = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -32,30 +36,23 @@ export const Navbar = (props) => {
   const userData = JSON.parse(localStorage.getItem('userDetails'))
   const finalUserName = userData?.slice(-1)
 
-  const userName = finalUserName?.length>0? finalUserName[0].name : 'guest'
+  const userName = finalUserName?.length > 0 ? finalUserName[0].name : 'guest'
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
   return (
     <>
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-                <FaShopify style={{fontSize:'40px',marginLeft:'15px'}}/>
+            <FaShopify style={{ fontSize: '40px', marginLeft: '15px' }} />
             <Typography
               variant="h6"
               noWrap
@@ -103,13 +100,15 @@ export const Navbar = (props) => {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                    
+                {pageData.map((page, i) => (
+                  <MenuItem key={i} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">
+                      <a href={page.href}>{page.name}</a>
+                    </Typography>
+
                   </MenuItem>
                 ))}
-                
+
               </Menu>
             </Box>
             <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -129,12 +128,12 @@ export const Navbar = (props) => {
                 textDecoration: "none",
               }}
             >
-             Nest
+              Nest
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
+              {pages.map((page, i) => (
                 <Button
-                  key={page}
+                  key={i}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >

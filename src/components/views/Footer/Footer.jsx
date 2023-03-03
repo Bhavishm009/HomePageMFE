@@ -6,9 +6,9 @@ import { TiSocialTumbler } from "react-icons/ti";
 import { TiSocialYoutube } from "react-icons/ti";
 import { TiSocialInstagram } from "react-icons/ti";
 import { RiSendPlaneFill } from "react-icons/ri";
-import {GoLocation} from 'react-icons/go'
-import {TfiHeadphoneAlt} from 'react-icons/tfi'
-import {FaShopify} from 'react-icons/fa'
+import { GoLocation } from 'react-icons/go'
+import { TfiHeadphoneAlt } from 'react-icons/tfi'
+import { FaShopify } from 'react-icons/fa'
 import classes from "./Footer.module.css";
 
 /**
@@ -24,12 +24,12 @@ export const Footer = (props) => {
     <div className={classes.footer}>
       <div className={classes.footer_box}>
         <div className={classes.footer_box_social}>
-        <FaShopify style={{fontSize: "30px", color:'#3BB77E',marginRight:'18rem'}}>Nest</FaShopify>
-          <p>
-          <GoLocation className={classes.icons}/> Address : Xyz Street <br/>
-          <TfiHeadphoneAlt className={classes.icons}/> Call Us : (+91) - 1234 456 789<br/>
-          <RiSendPlaneFill className={classes.icons}/> Email : contact@nest.com
-          </p>
+          <FaShopify style={{ fontSize: "30px", color: '#3BB77E', marginRight: '18rem' }}>Nest</FaShopify>
+          <div>
+            <GoLocation className={classes.icons} /> Address : Xyz Street <br />
+            <TfiHeadphoneAlt className={classes.icons} /> Call Us : (+91) - 1234 456 789<br />
+            <RiSendPlaneFill className={classes.icons} /> Email : contact@nest.com
+          </div>
           <div className={classes.footer_social}>
             <a href="#">
               <TiSocialFacebookCircular className={classes.icons} />
@@ -41,10 +41,10 @@ export const Footer = (props) => {
               <TiSocialTumbler className={classes.icons} />
             </a>
             <a href="#">
-              <TiSocialYoutube  className={classes.icons}/>
+              <TiSocialYoutube className={classes.icons} />
             </a>
             <a href="#">
-              <TiSocialInstagram  className={classes.icons}/>
+              <TiSocialInstagram className={classes.icons} />
             </a>
           </div>
         </div>
@@ -76,14 +76,14 @@ export const Footer = (props) => {
           </ul>
         </div>
         <div className={classes.subcribe}>
-            <h3>Subcribe</h3>
-            <div className={classes.subcribe_box}>
-          <input type="email" placeholder="Enter Your Email *" />
-          <RiSendPlaneFill className={classes.subcribe_box_send} />
-        </div>
-        <div className={classes.subcribe_box_info}>
+          <h3>Subcribe</h3>
+          <div className={classes.subcribe_box}>
+            <input type="email" placeholder="Enter Your Email *" />
+            <RiSendPlaneFill className={classes.subcribe_box_send} />
+          </div>
+          <div className={classes.subcribe_box_info}>
             <p>  Subcribe For Hot Deals And Update.</p>
-        </div>
+          </div>
         </div>
       </div>
     </div>
