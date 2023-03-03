@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classes from './Banner4.module.css';
-
-
+import { productData } from '../../../Constdata/mockdata';
+import useMfeStore from 'LoginPageMFE/useMfeStore'
+import products from 'LoginPageMFE/products'
 
 /**
  * Impliments Banner4 component
@@ -14,14 +15,32 @@ import classes from './Banner4.module.css';
 
 export const Banner4 = (props) => {
     const {children,img,productName,button,className} = props
-    return (<>
-        <div style={{backgroundImage:`url(${img})`}} className={`${classes.container}  ${className}`}>
-            {children}
-            <h3 className={classes.text}>{productName}</h3>
-            <button>Shop Now</button>
-        </div>
-        
-        </>
+    return (
+    // <>
+    //     <div style={{backgroundImage:`url(${img})`}} className={`${classes.container}  ${className}`}>
+    //         {children}
+    //         <h3 className={classes.text}>{productName}</h3>
+    //         <button>Shop Now</button>
+    //     </div>
+    //     </>
+    <>
+{products?.map((x,i)=>{
+        return (
+            <>
+            <div className="card object-fit-sm-contain border rounded ml-4 mb-3" style={{width: "20rem",gap:'1rem'}} key={i}>
+    <img className="card-img-top" src={x.productImg} alt="Card image cap" width='50px' height='50px'/>
+    <div className="card-body">
+      <h5 className="card-text">{x.productName}</h5>
+      <p className="card-text">{x.price}</p>
+        <a href="#" className="btn btn-primary">Buy Now</a>
+    </div>
+  </div>
+            </>
+        )
+    })}
+
+  </>
+ 
     )
 }
 

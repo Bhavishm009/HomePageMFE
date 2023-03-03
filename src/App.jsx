@@ -7,11 +7,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginPage from "LoginPageMFE/LoginPage";
 import Aboutus from "./components/views/Aboutus/Aboutus";
 import Navbar from "./components/views/Navbar/Navbar";
+import Banner4 from './components/views/Banner4/Banner4'
+import Offercard from "./components/views/Offercard/Offercard";
 const App = () => (
   <>
-    <Navbar />
-    <BrowserRouter>
 
+
+<div className="main"><Banner4/></div>
+    <div className="offer"><Offercard/></div>
+    <BrowserRouter>
+ 
       <Routes>
 
         <Route path="/" element={<HomePage />} />

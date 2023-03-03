@@ -5,7 +5,7 @@ import classes from './HomePage.module.css';
 import useMfeStore from 'LoginPageMFE/useMfeStore'
 import Hero from '../Hero/Hero';
 import Footer from '../Footer/Footer';
-import Navbar from '../Navbar/Navbar';
+
 
 
 
