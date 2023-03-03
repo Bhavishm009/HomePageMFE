@@ -9,11 +9,16 @@ import Aboutus from "./components/views/Aboutus/Aboutus";
 import Centerlizer from "LoginPageMFE/Centerlizer";
 import SingleProductPage from 'ProductPageMFE/SingleProductCard';
 import Navbar from "./components/views/Navbar/Navbar";
+import Banner4 from './components/views/Banner4/Banner4'
+import Offercard from "./components/views/Offercard/Offercard";
 const App = () => (
   <>
+
+
+<div className="main"><Banner4/></div>
+    <div className="offer"><Offercard/></div>
     <BrowserRouter>
-   
-     <Navbar/>
+ 
       <Routes>
      
         <Route path="/" element={<HomePage />} />

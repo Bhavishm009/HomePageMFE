@@ -17,4 +17,18 @@ html{
   width: auto;
   height: auto;
   background: #FFFFFF;
+
+}
+.main{
+  display: flex;
+  align-content: center;
+}
+.offer{
+  display: flex;
+  align-content: center;
+}
+.card-img{
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Menu from './Constdata/menuApi'
 import BuyCard from './components/views/ProductCard/BuyCard'
-import Navbar from './Navbar'
+
 
 const uniqueList = [...new Set(Menu.map((curElem) => {
   return curElem.category;
