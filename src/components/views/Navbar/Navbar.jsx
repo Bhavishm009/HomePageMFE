@@ -24,19 +24,20 @@ const pages = [
   <a href='/aboutus' style={{ color: 'white' }}>AboutUs</a>,
   <a href='/login' style={{ color: 'white' }}>Login</a>,
   <a href='/signIn' style={{ color: 'white' }}>Register</a>,
-  <a href='/product' style={{ color: 'white' }}>Product</a>];
+  <a href='/checkout' style={{ color: 'white' }}>Cart</a>];
 
-const pageData = [{ href: '/aboutus', name: 'AboutUs' }]
+const pageData = {
+  ABOUT_US: { href: '/aboutus', name: 'AboutUs' },
+  LOGIN: { href: '/login', name: 'Login' },
+  REGISTER: { href: '/signIn', name: 'Register' },
+  CART: { href: '/checkout', name: 'Cart' },
+}
 
-const settings = ['Profile', 'Account', 'Dashboard',];
 export const Navbar = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const logout = useMfeStore(state => state.logoutUser)
+  const user = useMfeStore(state => state.user)
 
-  const userData = JSON.parse(localStorage.getItem('userDetails'))
-  const finalUserName = userData?.slice(-1)
-
-  const userName = finalUserName?.length > 0 ? finalUserName[0].name : 'guest'
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -100,14 +101,27 @@ export const Navbar = (props) => {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {pageData.map((page, i) => (
-                  <MenuItem key={i} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">
-                      <a href={page.href}>{page.name}</a>
-                    </Typography>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">
+                    <a href={pageData.ABOUT_US.href}>{pageData.ABOUT_US.name}</a>
+                  </Typography>
+                </MenuItem>
 
-                  </MenuItem>
-                ))}
+                {!user?.name && <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">
+                    <a href={pageData.LOGIN.href}>{pageData.LOGIN.name}</a>
+                  </Typography>
+                </MenuItem>}
+                {!user?.name && <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">
+                    <a href={pageData.REGISTER.href}>{pageData.REGISTER.name}</a>
+                  </Typography>
+                </MenuItem>}
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">
+                    <a href={pageData.CART.href}>{pageData.CART.name}</a>
+                  </Typography>
+                </MenuItem>
 
               </Menu>
             </Box>
@@ -131,20 +145,44 @@ export const Navbar = (props) => {
               Nest
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page, i) => (
-                <Button
-                  key={i}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  {page}
-                </Button>
-              ))}
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <a style={{ color: 'white' }} href={pageData.ABOUT_US.href}>{pageData.ABOUT_US.name}</a>
+              </Button>
+              {!user && <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <a style={{ color: 'white' }} href={pageData.LOGIN.href}>{pageData.LOGIN.name}</a>
+              </Button>}
+              {!user && <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <a style={{ color: 'white' }} href={pageData.REGISTER.href}>{pageData.REGISTER.name}</a>
+              </Button>}
+              {user && <Button
+                onClick={() => {
+                  handleCloseNavMenu();
+                  logout();
+                }}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <a style={{ color: 'white' }} href='#'>Logout</a>
+              </Button>}
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <a style={{ color: 'white' }} href={pageData.CART.href}>{pageData.CART.name}</a>
+              </Button>
             </Box>
 
-       
-            
-          <span><h6>welcome</h6><h5>{userName}</h5></span>
+
+
+            <span><h6>welcome</h6><h5>{user?.name || 'Guest'}</h5></span>
           </Toolbar>
         </Container>
       </AppBar>

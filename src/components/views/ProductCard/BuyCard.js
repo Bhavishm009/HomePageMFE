@@ -21,8 +21,8 @@ const BuyCard = () => {
               <div className="card">
                 <div className="card-body">
                   <span className="card-author subtle">{description}</span>
-                  <h2 onClick={() => redirect(`/product?id=${curElem.id}`)} className="card-title">{productName}</h2>
-                  <img onClick={() => redirect(`/product?id=${curElem.id}`)} src={productImg} alt="Dosa" className="card-media" />
+                  <h2 className="card-title">{productName}</h2>
+                  <img src={productImg} alt="Dosa" className="card-media" />
                   <button
                     className="card-tag subtle"
                     onClick={() => addToCart(curElem)}
