@@ -12,9 +12,6 @@ import Offercard from "./components/views/Offercard/Offercard";
 const App = () => (
   <>
 
-
-<div className="main"><Banner4/></div>
-    <div className="offer"><Offercard/></div>
     <BrowserRouter>
  
       <Routes>
