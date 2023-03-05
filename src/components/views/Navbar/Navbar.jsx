@@ -12,6 +12,8 @@ import Typography from '@mui/material/Typography';
 import PropTypes from "prop-types";
 import useMfeStore from "LoginPageMFE/useMfeStore";
 import React from "react";
+import styles from './Navbar.module.css'
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaShopify } from 'react-icons/fa';
 /**
  * Impliments Navbar component
@@ -37,8 +39,8 @@ export const Navbar = (props) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const logout = useMfeStore(state => state.logoutUser)
   const user = useMfeStore(state => state.user)
-
-
+   const cart = useMfeStore(state => state.cart)
+    console.log(cart.cartItems.length)
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -54,6 +56,7 @@ export const Navbar = (props) => {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <FaShopify style={{ fontSize: '40px', marginLeft: '15px' }} />
+            
             <Typography
               variant="h6"
               noWrap
@@ -173,13 +176,18 @@ export const Navbar = (props) => {
                 <a style={{ color: 'white' }} href='#'>Logout</a>
               </Button>}
               <Button
+               
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <a style={{ color: 'white' }} href={pageData.CART.href}>{pageData.CART.name}</a>
+                <a style={{ color: 'white' }} href={pageData.CART.href}>
+                <AiOutlineShoppingCart  className={styles.cartIcon} />
+                 <span>{cart.cartItems.length}</span>
+                </a>
+                
               </Button>
             </Box>
-
+             
 
 
             <span><h6>welcome</h6><h5>{user?.name || 'Guest'}</h5></span>
@@ -192,7 +200,7 @@ export const Navbar = (props) => {
 
 /**
  * Property type definations
- *
+ *  {pageData.CART.name}
  * @type {object}
  * @property {string} example - shows example - delete for in use
  */

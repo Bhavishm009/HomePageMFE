@@ -12,6 +12,9 @@ import classes from "./Aboutus.module.css";
  */
 
 export const Aboutus = (props) => {
+  const handleClick = () => {
+    window.alert('Our helpline Number is 1900-8888')
+  }
   return (
     <>
       <div className={classes.about_section}>
@@ -36,7 +39,7 @@ export const Aboutus = (props) => {
               <p className={classes.title}>CEO & Founder</p>
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>jane@example.com</p>
-              <button className={classes.button}>Contact</button>
+              <button className={classes.button}onClick={handleClick}>Contact</button>
             </div>
           </div>
         </div>
@@ -53,7 +56,7 @@ export const Aboutus = (props) => {
               <p className={classes.title}>Head Engineer</p>
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>mike@example.com</p>
-              <button className={classes.button}>Contact</button>
+              <button className={classes.button} onClick={handleClick}>Contact</button>
             </div>
           </div>
         </div>
@@ -61,7 +64,7 @@ export const Aboutus = (props) => {
         <div className={classes.column}>
           <div className={classes.card}>
             <img
-              src="https://s3-alpha-sig.figma.com/img/8181/5e27/bb32e46fd5f30a32514385cc3e92aa0a?Expires=1678665600&Signature=jHkZ91amp5zb6K9IfesbfmrmA5q3YOLBZDNScVE7khP0GT3yjazOciEqyxPRrVzhFhR2zsAYg10iyrnCfq3tlpMAZZFA9ECnMibIoRdTq~BQ2-q~ijy5RCmDZ~WRx2L9z0fMa1t6evt2wjRdUizJ7U--3Ncyc~jtE3e6LxEZz5QQvnL-fgTuPjBv8JBAzps9umfMnGIe9sbKTuLgvjEES-6LUJjvr0q8PxumdNMP8w7IHrXQO-zZdq2shlcGyAG4ckSVeTacVR1kpmjAg~~eJGD4dxrax56knvQsnyIjwmtGtnzbqUicgo6b~GjWt~bV9kNkt5Okbid-p45CQ9HISQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+              src="https://cdn.pixabay.com/photo/2017/09/16/17/42/business-woman-2756210_960_720.jpg"
               alt="John"
               style={{ width: "100%" }}
             />
@@ -70,12 +73,15 @@ export const Aboutus = (props) => {
               <p className={classes.title}>Designer</p>
               <p>Some text that describes me lorem ipsum ipsum lorem.</p>
               <p>john@example.com</p>
-              <button className={classes.button}>Contact</button>
+              <button className={classes.button}onClick={handleClick}>Contact</button>
             </div>
           </div>
         </div>
       </div>
-    
+      <span className={classes.mapHeading}><h1>You can find Us on Google map</h1></span>
+      <div className={classes.mapImg}>
+        
+      </div>
     </>
   );
 };

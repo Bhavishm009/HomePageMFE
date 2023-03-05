@@ -24,10 +24,11 @@ const BuyCard = () => {
                   <h2 className="card-title">{productName}</h2>
                   <img src={productImg} alt="Dosa" className="card-media" />
                   <button
+                    style={{backgroundColor:'#3BB77E',color:'white',borderRadius:'15px'}}
                     className="card-tag subtle"
                     onClick={() => addToCart(curElem)}
                   >
-                    Order Now
+                    Add to Cart
                   </button>
                 </div>
               </div>

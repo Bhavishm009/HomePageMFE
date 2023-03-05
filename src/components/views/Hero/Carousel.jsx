@@ -40,7 +40,19 @@ const Carousele = () => {
         {
           image: "https://cdn.pixabay.com/photo/2018/04/13/17/12/vegetable-skewer-3317055_960_720.jpg",
           caption: "Vegetable Skewer"
-        }
+        },
+        {
+          image: "https://cdn.pixabay.com/photo/2017/04/04/16/56/chocolate-2202000_960_720.jpg",
+          caption: "cadbury"
+        },
+        {
+          image: "https://cdn.pixabay.com/photo/2018/03/11/09/16/peanut-butter-3216263_960_720.jpg",
+          caption: "peanut butter"
+        },
+        {
+          image: "https://cdn.pixabay.com/photo/2017/01/08/11/06/food-1962646_640.jpg",
+          caption: "Coocies"
+        },
       ];
       const captionStyle = {
         fontSize: '2em',

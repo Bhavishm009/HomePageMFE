@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { productData } from "../../../Constdata/mockdata";
 import classes from "./Offercard.module.css";
 import useMfeStore from 'LoginPageMFE/useMfeStore'
 import products from 'LoginPageMFE/products'
