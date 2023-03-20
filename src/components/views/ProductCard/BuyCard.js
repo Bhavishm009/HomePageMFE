@@ -8,9 +8,14 @@ import useMfeStore from 'LoginPageMFE/useMfeStore'
 
 const BuyCard = () => {
   const addToCart = useMfeStore(state => state.addToCart)
+  const user = useMfeStore(state => state.user)
   const redirect = (link) => {
     window.location.href = link
   }
+
+  // function addToCart(){
+         
+  // }
   return (
     <>
       <section className="main-card--cointainer">
@@ -26,7 +31,7 @@ const BuyCard = () => {
                   <button
                     style={{backgroundColor:'#3BB77E',color:'white',borderRadius:'15px'}}
                     className="card-tag subtle"
-                    onClick={() => addToCart(curElem)}
+                    onClick={() => {user? addToCart(curElem): window.alert('please login first')}}
                   >
                     Add to Cart
                   </button>

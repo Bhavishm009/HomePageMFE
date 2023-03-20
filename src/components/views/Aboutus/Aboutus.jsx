@@ -30,9 +30,9 @@ export const Aboutus = (props) => {
         <div className={classes.column}>
           <div className={classes.card}>
             <img
-              src="https://s3-alpha-sig.figma.com/img/a31a/0977/f471b9f955610e885c724e79922be30e?Expires=1678665600&Signature=n8lxt2TLKB1oN8JyCZCEqgMlE8PdK3Un1f~NrD7mSlyPE7m8-jyulWfUn~nGg9DBFCqWIukIvay7B1K~YFPwaEkLjQXSjNawdBu~Ud8BaNDGOhmJD6FSMpf~KCsvq7NAqGgrQaFjE4A6KNBbrp9y4hEdv9lgKZ2euR1ZqKAKMON186oS9jEAEXvOcmBaWmFDcaivxqHVQikRp7m1ZM5JFL4cvFNlewM0QmP6EiXRAn~Dhqr1z-KDmsVHfj0jHnl-FbJD5w0b1FU~HvzcRF7bcxtZMtvb1vGOQ0qBk90ptEYhzqLsEQCn4NTMuvlTxIUv-Ouc3SsDp6lA5HmSEEtOmg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+              src="https://cdn.pixabay.com/photo/2020/10/23/14/55/woman-5678999__340.jpg"
               alt="Jane"
-              style={{ width: "100%" }}
+              style={{ width: "100%",height:'27rem'}}
             />
             <div className={classes.container}>
               <h2>Emily Shaw</h2>
@@ -49,7 +49,7 @@ export const Aboutus = (props) => {
             <img
               src="https://cdn.pixabay.com/photo/2018/01/04/14/16/woman-3060784_960_720.jpg"
               alt="Mike"
-              style={{ width: "100%" }}
+              style={{ width: "100%",height:'27rem' }}
             />
             <div className={classes.container}>
               <h2>Lily Ross</h2>
@@ -66,7 +66,7 @@ export const Aboutus = (props) => {
             <img
               src="https://cdn.pixabay.com/photo/2017/09/16/17/42/business-woman-2756210_960_720.jpg"
               alt="John"
-              style={{ width: "100%" }}
+              style={{ width: "100%" ,height:'27rem'}}
             />
             <div className={classes.container}>
               <h2>Jenny Doe</h2>
