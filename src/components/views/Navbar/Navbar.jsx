@@ -55,8 +55,7 @@ export const Navbar = (props) => {
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <FaShopify style={{ fontSize: '40px', marginLeft: '15px' }}   component="a"
-              href="/"/>
+            <a href='/' style={{ color: 'white' }}><FaShopify style={{ fontSize: '40px', marginLeft: '15px' }} /></a>
             
             <Typography
               variant="h6"
